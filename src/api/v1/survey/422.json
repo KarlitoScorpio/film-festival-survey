@@ -1,0 +1,12 @@
+{
+  "errors": [
+    {
+      "source": { "pointer": "data/attributes/answers/film" },
+      "detail": "The value is required"
+    },
+    {
+      "source": { "pointer": "data/attributes/answers/review" },
+      "detail": "The value is required"
+    }
+  ]
+}

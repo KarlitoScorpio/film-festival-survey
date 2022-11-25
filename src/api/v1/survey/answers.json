@@ -1,0 +1,17 @@
+{
+  "data": {
+    "type": "surveyAnswers",
+    "attributes": {
+      "answers": [
+        {
+          "questionId": "film",
+          "answer": "Rocky Horror Picture Show"
+        },
+        {
+          "questionId": "review",
+          "answer": 5
+        }
+      ]
+    }
+  }
+}
