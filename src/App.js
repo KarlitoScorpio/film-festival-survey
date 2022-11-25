@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import { createServer } from "miragejs";
 import response from "./api/v1/survey/200.json";
 import error from "./api/v1/survey/500.json";
+import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom";
 
 let server = createServer();
 
 server.get("/api/v1/survey/", response.data.attributes);
+server.post("/api/v1/survey/:id/answers");
 
 function App() {
   const [response, setResponse] = useState({});
@@ -14,6 +17,10 @@ function App() {
   const [filmValue, setFilmValue] = useState("");
   const [ratingValue, setRatingValue] = useState(1);
   const [answers, setAnswers] = useState({});
+
+  const id = uuidv4();
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -62,6 +69,16 @@ function App() {
   }, []);
 
   function handleSubmit(e) {
+    e.preventDefault();
+    setAnswers(filmValue + ratingValue)
+    fetch(`/api/v1/survey/:${id}/answers`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(answers),
+    });
+    navigate("/success")
   }
 
   return (
