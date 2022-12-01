@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
-import { SurveyContext } from "./SurveyContext";
-import survey from "./json/200.json";
-import error from "./json/500.json";
+import { SurveyContext } from "../context/SurveyContext";
+import survey from "../json/200.json";
+import error from "../json/500.json";
 
 function SuccessPage() {
   const [questions, setQuestions] = useState([]);

@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from "react";
-import survey from "./json/200.json";
-import error from "./json/500.json";
+import survey from "../json/200.json";
+import error from "../json/500.json";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
-import { SurveyContext } from "./SurveyContext";
+import { SurveyContext } from "../context/SurveyContext";
 
 function IndexPage() {
   const [response, setResponse] = useState({});

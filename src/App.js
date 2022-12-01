@@ -1,9 +1,9 @@
 import { createServer } from "miragejs";
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import IndexPage from "./IndexPage";
-import SuccessPage from "./SuccessPage";
-import { SurveyContext } from "./SurveyContext";
+import IndexPage from "./pages/IndexPage";
+import SuccessPage from "./pages/SuccessPage";
+import { SurveyContext } from "./context/SurveyContext";
 
 const server = createServer();
 
